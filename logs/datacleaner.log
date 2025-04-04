@@ -1,0 +1,812 @@
+2025-03-13 10:26:03,585 - INFO - 5268 doublons supprimï¿½s.
+2025-03-13 10:26:03,768 - INFO - Valeurs manquantes traitï¿½e. Le nombre des valeurs ï¿½tait de : 
+InvoiceNo           0
+StockCode           0
+Description      1454
+Quantity            0
+InvoiceDate         0
+UnitPrice           0
+CustomerID     135037
+Country             0
+dtype: int64
+2025-03-13 10:26:03,874 - INFO - 8872 transaction annulï¿½es supprimï¿½es! 
+2025-03-13 16:21:11,300 - INFO - Début de la pipeline ETL..
+2025-03-13 16:21:11,301 - INFO - Etape 01: Nettoyage
+2025-03-13 16:21:11,548 - INFO - 5268 doublons supprimés.
+2025-03-13 16:21:11,897 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo           0
+StockCode           0
+Description      1454
+Quantity            0
+InvoiceDate         0
+UnitPrice           0
+CustomerID     135037
+Country             0
+dtype: int64
+2025-03-13 16:21:12,108 - INFO - 8872 transaction annulées supprimées! 
+2025-03-13 16:21:12,109 - INFO - Etape 02: Traitement des Transactions
+2025-03-13 16:21:12,127 - INFO - Calcule du montant total de chaque transaction..
+2025-03-13 16:21:12,150 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-13 16:21:12,153 - INFO - Regroupement des donées par pays et calcul de la somme total des ventes par pays...
+2025-03-13 16:21:12,196 - INFO - Traitement terminée, voici un appercu des ventes par pays 
+ :      Country  TotalAmount
+0  Australia    138453.81
+1    Austria     10198.68
+2    Bahrain       548.40
+3    Belgium     41196.34
+4     Brazil      1143.60
+2025-03-13 16:21:12,198 - INFO - Calcule des statistiques mensuelles..
+2025-03-13 16:21:12,268 - INFO - Calcule des staistiques mensuelles terminé, voici un appercu : 
+     Month  total_sales  transaction_count
+0  2010-12   570422.730              25673
+1  2011-01   568101.310              20991
+2  2011-02   446084.920              19707
+3  2011-03   594081.760              26872
+4  2011-04   468374.331              22435
+2025-03-13 16:21:12,270 - INFO - Calcul des statistiques ..
+2025-03-13 16:21:12,297 - INFO - Le produit ayant rapporté plus de gains en France est: POSTAGE
+2025-03-13 16:21:12,302 - INFO - L'\heure avec le plus grand nombre de transaction est: 12H.
+2025-03-13 16:21:12,302 - INFO - Etude sur les des données des fournisseurs
+2025-03-13 16:21:12,368 - INFO - Le classement des TOP fournisseurs est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-13 16:21:12,373 - INFO - Le classement des TOP fournisseurs des UK en 2011 est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-13 16:21:12,375 - INFO - Etape 03: Les données mondiales
+2025-03-13 16:24:11,643 - INFO - Début de la pipeline ETL..
+2025-03-13 16:24:11,644 - INFO - Etape 01: Nettoyage
+2025-03-13 16:24:11,888 - INFO - 5268 doublons supprimés.
+2025-03-13 16:24:12,083 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo           0
+StockCode           0
+Description      1454
+Quantity            0
+InvoiceDate         0
+UnitPrice           0
+CustomerID     135037
+Country             0
+dtype: int64
+2025-03-13 16:24:12,205 - INFO - 8872 transaction annulées supprimées! 
+2025-03-13 16:24:12,206 - INFO - Etape 02: Traitement des Transactions
+2025-03-13 16:24:12,206 - INFO - Calcule du montant total de chaque transaction..
+2025-03-13 16:24:12,215 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-13 16:24:12,216 - INFO - Regroupement des donées par pays et calcul de la somme total des ventes par pays...
+2025-03-13 16:24:12,239 - INFO - Traitement terminée, voici un appercu des ventes par pays 
+ :      Country  TotalAmount
+0  Australia    138453.81
+1    Austria     10198.68
+2    Bahrain       548.40
+3    Belgium     41196.34
+4     Brazil      1143.60
+2025-03-13 16:24:12,240 - INFO - Calcule des statistiques mensuelles..
+2025-03-13 16:24:12,286 - INFO - Calcule des staistiques mensuelles terminé, voici un appercu : 
+     Month  total_sales  transaction_count
+0  2010-12   570422.730              25673
+1  2011-01   568101.310              20991
+2  2011-02   446084.920              19707
+3  2011-03   594081.760              26872
+4  2011-04   468374.331              22435
+2025-03-13 16:24:12,289 - INFO - Calcul des statistiques ..
+2025-03-13 16:24:12,314 - INFO - Le produit ayant rapporté plus de gains en France est: POSTAGE
+2025-03-13 16:24:12,319 - INFO - L'\heure avec le plus grand nombre de transaction est: 12H.
+2025-03-13 16:24:12,320 - INFO - Etude sur les des données des fournisseurs
+2025-03-13 16:24:12,370 - INFO - Le classement des TOP fournisseurs est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-13 16:24:12,372 - INFO - Le classement des TOP fournisseurs des UK en 2011 est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-13 16:24:12,373 - INFO - Etape 03: Les données mondiales
+2025-03-13 16:24:12,560 - INFO - 0 doublons supprimés.
+2025-03-13 16:24:12,710 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo      0
+StockCode      0
+Description    0
+Quantity       0
+InvoiceDate    0
+UnitPrice      0
+CustomerID     0
+Country        0
+dtype: int64
+2025-03-13 16:24:12,712 - INFO - Calcule du montant total de chaque transaction..
+2025-03-13 16:24:12,722 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-13 16:26:01,433 - INFO - Début de la pipeline ETL..
+2025-03-13 16:26:01,433 - INFO - Etape 01: Nettoyage
+2025-03-13 16:26:01,684 - INFO - 5268 doublons supprimés.
+2025-03-13 16:26:01,989 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo           0
+StockCode           0
+Description      1454
+Quantity            0
+InvoiceDate         0
+UnitPrice           0
+CustomerID     135037
+Country             0
+dtype: int64
+2025-03-13 16:26:02,145 - INFO - 8872 transaction annulées supprimées! 
+2025-03-13 16:26:02,145 - INFO - Etape 02: Traitement des Transactions
+2025-03-13 16:26:02,145 - INFO - Calcule du montant total de chaque transaction..
+2025-03-13 16:26:02,152 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-13 16:26:02,153 - INFO - Regroupement des donées par pays et calcul de la somme total des ventes par pays...
+2025-03-13 16:26:02,168 - INFO - Traitement terminée, voici un appercu des ventes par pays 
+ :      Country  TotalAmount
+0  Australia    138453.81
+1    Austria     10198.68
+2    Bahrain       548.40
+3    Belgium     41196.34
+4     Brazil      1143.60
+2025-03-13 16:26:02,168 - INFO - Calcule des statistiques mensuelles..
+2025-03-13 16:26:02,202 - INFO - Calcule des staistiques mensuelles terminé, voici un appercu : 
+     Month  total_sales  transaction_count
+0  2010-12   570422.730              25673
+1  2011-01   568101.310              20991
+2  2011-02   446084.920              19707
+3  2011-03   594081.760              26872
+4  2011-04   468374.331              22435
+2025-03-13 16:26:02,203 - INFO - Calcul des statistiques ..
+2025-03-13 16:26:02,218 - INFO - Le produit ayant rapporté plus de gains en France est: POSTAGE
+2025-03-13 16:26:02,223 - INFO - L'\heure avec le plus grand nombre de transaction est: 12H.
+2025-03-13 16:26:02,224 - INFO - Etude sur les des données des fournisseurs
+2025-03-13 16:26:02,275 - INFO - Le classement des TOP fournisseurs est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-13 16:26:02,281 - INFO - Le classement des TOP fournisseurs des UK en 2011 est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-13 16:26:02,284 - INFO - Etape 03: Les données mondiales
+2025-03-13 16:26:02,480 - INFO - 0 doublons supprimés.
+2025-03-13 16:26:02,695 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo      0
+StockCode      0
+Description    0
+Quantity       0
+InvoiceDate    0
+UnitPrice      0
+CustomerID     0
+Country        0
+dtype: int64
+2025-03-13 16:26:02,697 - INFO - Calcule du montant total de chaque transaction..
+2025-03-13 16:26:02,712 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-13 16:26:02,714 - INFO - Aggregation des données mondiales..
+2025-03-13 16:26:02,797 - INFO - Le classement des ventes par Continent est: 
+         Continent  TotalAmount
+2         Europe  8075580.534
+4        Oceania   137009.770
+1           Asia    55725.140
+3  North America     5397.300
+6        Unknown     2660.770
+5  South America     1143.600
+0         Africa     1002.310
+2025-03-13 16:26:02,798 - INFO - Identification du contient avec plus d'opérations annulées...
+2025-03-13 16:26:02,937 - INFO - Le continent avec le plus grand nombre de transactions annulées est: Europe
+2025-03-13 16:29:22,989 - INFO - Début de la pipeline ETL..
+2025-03-13 16:29:22,990 - INFO - Etape 01: Nettoyage
+2025-03-13 16:29:23,397 - INFO - 5268 doublons supprimés.
+2025-03-13 16:29:23,658 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo           0
+StockCode           0
+Description      1454
+Quantity            0
+InvoiceDate         0
+UnitPrice           0
+CustomerID     135037
+Country             0
+dtype: int64
+2025-03-13 16:29:23,827 - INFO - 8872 transaction annulées supprimées! 
+2025-03-13 16:29:23,828 - INFO - Etape 02: Traitement des Transactions
+2025-03-13 16:29:23,829 - INFO - Calcule du montant total de chaque transaction..
+2025-03-13 16:29:23,856 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-13 16:29:23,859 - INFO - Regroupement des donées par pays et calcul de la somme total des ventes par pays...
+2025-03-13 16:29:23,912 - INFO - Traitement terminée, voici un appercu des ventes par pays 
+ :      Country  TotalAmount
+0  Australia    138453.81
+1    Austria     10198.68
+2    Bahrain       548.40
+3    Belgium     41196.34
+4     Brazil      1143.60
+2025-03-13 16:29:23,914 - INFO - Calcule des statistiques mensuelles..
+2025-03-13 16:29:23,990 - INFO - Calcule des staistiques mensuelles terminé, voici un appercu : 
+     Month  total_sales  transaction_count
+0  2010-12   570422.730              25673
+1  2011-01   568101.310              20991
+2  2011-02   446084.920              19707
+3  2011-03   594081.760              26872
+4  2011-04   468374.331              22435
+2025-03-13 16:29:23,993 - INFO - Calcul des statistiques ..
+2025-03-13 16:29:24,024 - INFO - Le produit ayant rapporté plus de gains en France est: POSTAGE
+2025-03-13 16:29:24,030 - INFO - L'\heure avec le plus grand nombre de transaction est: 12H.
+2025-03-13 16:29:24,031 - INFO - Etude sur les des données des fournisseurs
+2025-03-13 16:29:24,136 - INFO - Le classement des TOP fournisseurs est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-13 16:29:24,142 - INFO - Le classement des TOP fournisseurs des UK en 2011 est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-13 16:29:24,145 - INFO - Etape 03: Les données mondiales
+2025-03-13 16:29:24,378 - INFO - 0 doublons supprimés.
+2025-03-13 16:29:24,595 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo      0
+StockCode      0
+Description    0
+Quantity       0
+InvoiceDate    0
+UnitPrice      0
+CustomerID     0
+Country        0
+dtype: int64
+2025-03-13 16:29:24,597 - INFO - Calcule du montant total de chaque transaction..
+2025-03-13 16:29:24,609 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-13 16:29:24,611 - INFO - Aggregation des données mondiales..
+2025-03-13 16:29:24,700 - INFO - Le classement des ventes par Continent est: 
+         Continent  TotalAmount
+2         Europe  8075580.534
+4        Oceania   137009.770
+1           Asia    55725.140
+3  North America     5397.300
+6        Unknown     2660.770
+5  South America     1143.600
+0         Africa     1002.310
+2025-03-13 16:29:24,702 - INFO - Identification du contient avec plus d'opérations annulées...
+2025-03-13 16:29:24,940 - INFO - Le continent avec le plus grand nombre de transactions annulées est: Europe
+2025-03-13 16:29:24,950 - INFO - Pipeline ETL terminé avec succès :)
+2025-03-13 16:31:08,181 - INFO - Début de la pipeline ETL..
+2025-03-13 16:31:08,182 - INFO - Etape 01: Nettoyage
+2025-03-13 16:31:08,457 - INFO - 5268 doublons supprimés.
+2025-03-13 16:31:08,691 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo           0
+StockCode           0
+Description      1454
+Quantity            0
+InvoiceDate         0
+UnitPrice           0
+CustomerID     135037
+Country             0
+dtype: int64
+2025-03-13 16:31:08,868 - INFO - 8872 transaction annulées supprimées! 
+2025-03-13 16:31:08,869 - INFO - Etape 02: Traitement des Transactions
+2025-03-13 16:31:08,869 - INFO - Calcule du montant total de chaque transaction..
+2025-03-13 16:31:08,889 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-13 16:31:08,891 - INFO - Regroupement des donées par pays et calcul de la somme total des ventes par pays...
+2025-03-13 16:31:08,933 - INFO - Traitement terminée, voici un appercu des ventes par pays 
+ :      Country  TotalAmount
+0  Australia    138453.81
+1    Austria     10198.68
+2    Bahrain       548.40
+3    Belgium     41196.34
+4     Brazil      1143.60
+2025-03-13 16:31:08,935 - INFO - Calcule des statistiques mensuelles..
+2025-03-13 16:31:09,000 - INFO - Calcule des staistiques mensuelles terminé, voici un appercu : 
+     Month  total_sales  transaction_count
+0  2010-12   570422.730              25673
+1  2011-01   568101.310              20991
+2  2011-02   446084.920              19707
+3  2011-03   594081.760              26872
+4  2011-04   468374.331              22435
+2025-03-13 16:31:09,001 - INFO - Calcul des statistiques ..
+2025-03-13 16:31:09,018 - INFO - Le produit ayant rapporté plus de gains en France est: POSTAGE
+2025-03-13 16:31:09,022 - INFO - L'\heure avec le plus grand nombre de transaction est: 12H.
+2025-03-13 16:31:09,023 - INFO - Etude sur les des données des fournisseurs
+2025-03-13 16:31:09,096 - INFO - Le classement des TOP fournisseurs est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-13 16:31:09,101 - INFO - Le classement des TOP fournisseurs des UK en 2011 est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-13 16:31:09,103 - INFO - Etape 03: Les données mondiales
+2025-03-13 16:31:09,306 - INFO - 0 doublons supprimés.
+2025-03-13 16:31:09,451 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo      0
+StockCode      0
+Description    0
+Quantity       0
+InvoiceDate    0
+UnitPrice      0
+CustomerID     0
+Country        0
+dtype: int64
+2025-03-13 16:31:09,454 - INFO - Calcule du montant total de chaque transaction..
+2025-03-13 16:31:09,464 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-13 16:31:09,465 - INFO - Aggregation des données mondiales..
+2025-03-13 16:31:09,555 - INFO - Le classement des ventes par Continent est: 
+         Continent  TotalAmount
+2         Europe  8075580.534
+4        Oceania   137009.770
+1           Asia    55725.140
+3  North America     5397.300
+6        Unknown     2660.770
+5  South America     1143.600
+0         Africa     1002.310
+2025-03-13 16:31:09,556 - INFO - Identification du contient avec plus d'opérations annulées...
+2025-03-13 16:31:09,731 - INFO - Le continent avec le plus grand nombre de transactions annulées est: Europe
+2025-03-13 16:31:09,740 - INFO - Pipeline ETL terminé avec succès :)
+2025-03-13 16:32:22,065 - INFO - Début de la pipeline ETL..
+2025-03-13 16:32:22,065 - INFO - Etape 01: Nettoyage
+2025-03-13 16:32:22,309 - INFO - 5268 doublons supprimés.
+2025-03-13 16:32:22,572 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo           0
+StockCode           0
+Description      1454
+Quantity            0
+InvoiceDate         0
+UnitPrice           0
+CustomerID     135037
+Country             0
+dtype: int64
+2025-03-13 16:32:22,694 - INFO - 8872 transaction annulées supprimées! 
+2025-03-13 16:32:22,695 - INFO - Etape 02: Traitement des Transactions
+2025-03-13 16:32:22,696 - INFO - Calcule du montant total de chaque transaction..
+2025-03-13 16:32:22,720 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-13 16:32:22,723 - INFO - Regroupement des donées par pays et calcul de la somme total des ventes par pays...
+2025-03-13 16:32:22,760 - INFO - Traitement terminée, voici un appercu des ventes par pays 
+ :      Country  TotalAmount
+0  Australia    138453.81
+1    Austria     10198.68
+2    Bahrain       548.40
+3    Belgium     41196.34
+4     Brazil      1143.60
+2025-03-13 16:32:22,764 - INFO - Calcule des statistiques mensuelles..
+2025-03-13 16:32:22,847 - INFO - Calcule des staistiques mensuelles terminé, voici un appercu : 
+     Month  total_sales  transaction_count
+0  2010-12   570422.730              25673
+1  2011-01   568101.310              20991
+2  2011-02   446084.920              19707
+3  2011-03   594081.760              26872
+4  2011-04   468374.331              22435
+2025-03-13 16:32:22,850 - INFO - Calcul des statistiques ..
+2025-03-13 16:32:22,879 - INFO - Le produit ayant rapporté plus de gains en France est: POSTAGE
+2025-03-13 16:32:22,886 - INFO - L'\heure avec le plus grand nombre de transaction est: 12H.
+2025-03-13 16:32:22,887 - INFO - Etude sur les des données des fournisseurs
+2025-03-13 16:32:22,953 - INFO - Le classement des TOP fournisseurs est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-13 16:32:22,958 - INFO - Le classement des TOP fournisseurs des UK en 2011 est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-13 16:32:22,960 - INFO - Etape 03: Les données mondiales
+2025-03-13 16:32:23,188 - INFO - 0 doublons supprimés.
+2025-03-13 16:32:23,412 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo      0
+StockCode      0
+Description    0
+Quantity       0
+InvoiceDate    0
+UnitPrice      0
+CustomerID     0
+Country        0
+dtype: int64
+2025-03-13 16:32:23,414 - INFO - Calcule du montant total de chaque transaction..
+2025-03-13 16:32:23,425 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-13 16:32:23,427 - INFO - Aggregation des données mondiales..
+2025-03-13 16:32:23,542 - INFO - Le classement des ventes par Continent est: 
+         Continent  TotalAmount
+2         Europe  8075580.534
+4        Oceania   137009.770
+1           Asia    55725.140
+3  North America     5397.300
+6        Unknown     2660.770
+5  South America     1143.600
+0         Africa     1002.310
+2025-03-13 16:32:23,544 - INFO - Identification du contient avec plus d'opérations annulées...
+2025-03-13 16:32:23,673 - INFO - Le continent avec le plus grand nombre de transactions annulées est: Europe
+2025-03-13 16:32:23,680 - INFO - Pipeline ETL terminé avec succès :)
+2025-03-13 16:32:23,681 - INFO - Enregistrement du fichier parquet dans data/transactions_final.parquet...
+2025-03-17 09:15:43,588 - INFO - Début de la pipeline ETL..
+2025-03-17 09:15:43,592 - INFO - Etape 01: Nettoyage
+2025-03-17 09:15:43,832 - INFO - 5268 doublons supprimés.
+2025-03-17 09:15:44,085 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo           0
+StockCode           0
+Description      1454
+Quantity            0
+InvoiceDate         0
+UnitPrice           0
+CustomerID     135037
+Country             0
+dtype: int64
+2025-03-17 09:15:44,191 - INFO - 8872 transaction annulées supprimées! 
+2025-03-17 09:15:44,192 - INFO - Etape 02: Traitement des Transactions
+2025-03-17 09:15:44,193 - INFO - Calcule du montant total de chaque transaction..
+2025-03-17 09:15:44,201 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-17 09:15:44,202 - INFO - Regroupement des donées par pays et calcul de la somme total des ventes par pays...
+2025-03-17 09:15:44,243 - INFO - Traitement terminée, voici un appercu des ventes par pays 
+ :      Country  TotalAmount
+0  Australia    138453.81
+1    Austria     10198.68
+2    Bahrain       548.40
+3    Belgium     41196.34
+4     Brazil      1143.60
+2025-03-17 09:15:44,245 - INFO - Calcule des statistiques mensuelles..
+2025-03-17 09:15:44,293 - INFO - Calcule des staistiques mensuelles terminé, voici un appercu : 
+     Month  total_sales  transaction_count
+0  2010-12   570422.730              25673
+1  2011-01   568101.310              20991
+2  2011-02   446084.920              19707
+3  2011-03   594081.760              26872
+4  2011-04   468374.331              22435
+2025-03-17 09:15:44,295 - INFO - Calcul des statistiques ..
+2025-03-17 09:15:44,322 - INFO - Le produit ayant rapporté plus de gains en France est: POSTAGE
+2025-03-17 09:15:44,331 - INFO - L'\heure avec le plus grand nombre de transaction est: 12H.
+2025-03-17 09:15:44,332 - INFO - Etude sur les des données des fournisseurs
+2025-03-17 09:15:44,406 - INFO - Le classement des TOP fournisseurs est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-17 09:15:44,409 - INFO - Le classement des TOP fournisseurs des UK en 2011 est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-17 09:15:44,410 - INFO - Etape 03: Les données mondiales
+2025-03-17 09:15:44,559 - INFO - 0 doublons supprimés.
+2025-03-17 09:15:44,707 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo      0
+StockCode      0
+Description    0
+Quantity       0
+InvoiceDate    0
+UnitPrice      0
+CustomerID     0
+Country        0
+dtype: int64
+2025-03-17 09:15:44,708 - INFO - Calcule du montant total de chaque transaction..
+2025-03-17 09:15:44,717 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-17 09:15:44,718 - INFO - Aggregation des données mondiales..
+2025-03-17 09:15:44,803 - INFO - Le classement des ventes par Continent est: 
+         Continent  TotalAmount
+2         Europe  8075580.534
+4        Oceania   137009.770
+1           Asia    55725.140
+3  North America     5397.300
+6        Unknown     2660.770
+5  South America     1143.600
+0         Africa     1002.310
+2025-03-17 09:15:44,804 - INFO - Identification du contient avec plus d'opérations annulées...
+2025-03-17 09:15:44,942 - INFO - Le continent avec le plus grand nombre de transactions annulées est: Europe
+2025-03-17 09:15:44,949 - INFO - Pipeline ETL terminé avec succès :)
+2025-03-17 09:15:44,949 - INFO - Enregistrement du fichier parquet dans data/transactions_final.parquet...
+2025-03-17 09:17:06,432 - INFO - Début de la pipeline ETL..
+2025-03-17 09:17:06,433 - INFO - Etape 01: Nettoyage
+2025-03-17 09:17:06,848 - INFO - 5268 doublons supprimés.
+2025-03-17 09:17:07,059 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo           0
+StockCode           0
+Description      1454
+Quantity            0
+InvoiceDate         0
+UnitPrice           0
+CustomerID     135037
+Country             0
+dtype: int64
+2025-03-17 09:17:07,171 - INFO - 8872 transaction annulées supprimées! 
+2025-03-17 09:17:07,172 - INFO - Etape 02: Traitement des Transactions
+2025-03-17 09:17:07,173 - INFO - Calcule du montant total de chaque transaction..
+2025-03-17 09:17:07,188 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-17 09:17:07,190 - INFO - Regroupement des donées par pays et calcul de la somme total des ventes par pays...
+2025-03-17 09:17:07,215 - INFO - Traitement terminée, voici un appercu des ventes par pays 
+ :      Country  TotalAmount
+0  Australia    138453.81
+1    Austria     10198.68
+2    Bahrain       548.40
+3    Belgium     41196.34
+4     Brazil      1143.60
+2025-03-17 09:17:07,216 - INFO - Calcule des statistiques mensuelles..
+2025-03-17 09:17:07,269 - INFO - Calcule des staistiques mensuelles terminé, voici un appercu : 
+     Month  total_sales  transaction_count
+0  2010-12   570422.730              25673
+1  2011-01   568101.310              20991
+2  2011-02   446084.920              19707
+3  2011-03   594081.760              26872
+4  2011-04   468374.331              22435
+2025-03-17 09:17:07,271 - INFO - Calcul des statistiques ..
+2025-03-17 09:17:07,290 - INFO - Le produit ayant rapporté plus de gains en France est: POSTAGE
+2025-03-17 09:17:07,296 - INFO - L'\heure avec le plus grand nombre de transaction est: 12H.
+2025-03-17 09:17:07,297 - INFO - Etude sur les des données des fournisseurs
+2025-03-17 09:17:07,350 - INFO - Le classement des TOP fournisseurs est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-17 09:17:07,354 - INFO - Le classement des TOP fournisseurs des UK en 2011 est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-17 09:17:07,355 - INFO - Etape 03: Les données mondiales
+2025-03-17 09:17:07,538 - INFO - 0 doublons supprimés.
+2025-03-17 09:17:07,716 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo      0
+StockCode      0
+Description    0
+Quantity       0
+InvoiceDate    0
+UnitPrice      0
+CustomerID     0
+Country        0
+dtype: int64
+2025-03-17 09:17:07,719 - INFO - Calcule du montant total de chaque transaction..
+2025-03-17 09:17:07,731 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-17 09:17:07,732 - INFO - Aggregation des données mondiales..
+2025-03-17 09:17:07,811 - INFO - Le classement des ventes par Continent est: 
+         Continent  TotalAmount
+2         Europe  8075580.534
+4        Oceania   137009.770
+1           Asia    55725.140
+3  North America     5397.300
+6        Unknown     2660.770
+5  South America     1143.600
+0         Africa     1002.310
+2025-03-17 09:17:07,814 - INFO - Identification du contient avec plus d'opérations annulées...
+2025-03-17 09:17:07,965 - INFO - Le continent avec le plus grand nombre de transactions annulées est: Europe
+2025-03-17 09:17:07,976 - INFO - Pipeline ETL terminé avec succès :)
+2025-03-17 09:17:07,977 - INFO - Enregistrement du fichier parquet dans data/transactions_final.parquet...
+2025-03-17 09:21:01,828 - INFO - Début de la pipeline ETL..
+2025-03-17 09:21:01,829 - INFO - Etape 01: Nettoyage
+2025-03-17 09:21:02,012 - INFO - 5268 doublons supprimés.
+2025-03-17 09:21:02,186 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo           0
+StockCode           0
+Description      1454
+Quantity            0
+InvoiceDate         0
+UnitPrice           0
+CustomerID     135037
+Country             0
+dtype: int64
+2025-03-17 09:21:02,292 - INFO - 8872 transaction annulées supprimées! 
+2025-03-17 09:21:02,292 - INFO - Etape 02: Traitement des Transactions
+2025-03-17 09:21:02,292 - INFO - Calcule du montant total de chaque transaction..
+2025-03-17 09:21:02,305 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-17 09:21:02,307 - INFO - Regroupement des donées par pays et calcul de la somme total des ventes par pays...
+2025-03-17 09:21:02,327 - INFO - Traitement terminée, voici un appercu des ventes par pays 
+ :      Country  TotalAmount
+0  Australia    138453.81
+1    Austria     10198.68
+2    Bahrain       548.40
+3    Belgium     41196.34
+4     Brazil      1143.60
+2025-03-17 09:21:02,329 - INFO - Calcule des statistiques mensuelles..
+2025-03-17 09:21:02,372 - INFO - Calcule des staistiques mensuelles terminé, voici un appercu : 
+     Month  total_sales  transaction_count
+0  2010-12   570422.730              25673
+1  2011-01   568101.310              20991
+2  2011-02   446084.920              19707
+3  2011-03   594081.760              26872
+4  2011-04   468374.331              22435
+2025-03-17 09:21:02,375 - INFO - Calcul des statistiques ..
+2025-03-17 09:21:02,392 - INFO - Le produit ayant rapporté plus de gains en France est: POSTAGE
+2025-03-17 09:21:02,397 - INFO - L'\heure avec le plus grand nombre de transaction est: 12H.
+2025-03-17 09:21:02,397 - INFO - Etude sur les des données des fournisseurs
+2025-03-17 09:21:02,448 - INFO - Le classement des TOP fournisseurs est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-17 09:21:02,450 - INFO - Le classement des TOP fournisseurs des UK en 2011 est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-17 09:21:02,451 - INFO - Etape 03: Les données mondiales
+2025-03-17 09:21:02,602 - INFO - 0 doublons supprimés.
+2025-03-17 09:21:02,733 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo      0
+StockCode      0
+Description    0
+Quantity       0
+InvoiceDate    0
+UnitPrice      0
+CustomerID     0
+Country        0
+dtype: int64
+2025-03-17 09:21:02,735 - INFO - Calcule du montant total de chaque transaction..
+2025-03-17 09:21:02,745 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-17 09:21:02,746 - INFO - Aggregation des données mondiales..
+2025-03-17 09:21:02,808 - INFO - Le classement des ventes par Continent est: 
+         Continent  TotalAmount
+2         Europe  8075580.534
+4        Oceania   137009.770
+1           Asia    55725.140
+3  North America     5397.300
+6        Unknown     2660.770
+5  South America     1143.600
+0         Africa     1002.310
+2025-03-17 09:21:02,810 - INFO - Identification du contient avec plus d'opérations annulées...
+2025-03-17 09:21:02,937 - INFO - Le continent avec le plus grand nombre de transactions annulées est: Europe
+2025-03-17 09:21:02,943 - INFO - Pipeline ETL terminé avec succès :)
+2025-03-17 09:21:02,944 - INFO - Enregistrement du fichier parquet dans data/transactions_final.parquet...
+2025-03-17 09:24:06,105 - INFO - Début de la pipeline ETL..
+2025-03-17 09:24:06,106 - INFO - Etape 01: Nettoyage
+2025-03-17 09:24:06,279 - INFO - 5268 doublons supprimés.
+2025-03-17 09:24:06,431 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo           0
+StockCode           0
+Description      1454
+Quantity            0
+InvoiceDate         0
+UnitPrice           0
+CustomerID     135037
+Country             0
+dtype: int64
+2025-03-17 09:24:06,517 - INFO - 8872 transaction annulées supprimées! 
+2025-03-17 09:24:06,517 - INFO - Etape 02: Traitement des Transactions
+2025-03-17 09:24:06,518 - INFO - Calcule du montant total de chaque transaction..
+2025-03-17 09:24:06,529 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-17 09:24:06,530 - INFO - Regroupement des donées par pays et calcul de la somme total des ventes par pays...
+2025-03-17 09:24:06,547 - INFO - Traitement terminée, voici un appercu des ventes par pays 
+ :      Country  TotalAmount
+0  Australia    138453.81
+1    Austria     10198.68
+2    Bahrain       548.40
+3    Belgium     41196.34
+4     Brazil      1143.60
+2025-03-17 09:24:06,548 - INFO - Calcule des statistiques mensuelles..
+2025-03-17 09:24:06,584 - INFO - Calcule des staistiques mensuelles terminé, voici un appercu : 
+     Month  total_sales  transaction_count
+0  2010-12   570422.730              25673
+1  2011-01   568101.310              20991
+2  2011-02   446084.920              19707
+3  2011-03   594081.760              26872
+4  2011-04   468374.331              22435
+2025-03-17 09:24:06,586 - INFO - Calcul des statistiques ..
+2025-03-17 09:24:06,599 - INFO - Le produit ayant rapporté plus de gains en France est: POSTAGE
+2025-03-17 09:24:06,602 - INFO - L'\heure avec le plus grand nombre de transaction est: 12H.
+2025-03-17 09:24:06,602 - INFO - Etude sur les des données des fournisseurs
+2025-03-17 09:24:06,643 - INFO - Le classement des TOP fournisseurs est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-17 09:24:06,646 - INFO - Le classement des TOP fournisseurs des UK en 2011 est: 
+ Empty DataFrame
+Columns: [Supplier, TotalAmount]
+Index: []
+2025-03-17 09:24:06,647 - INFO - Etape 03: Les données mondiales
+2025-03-17 09:24:06,772 - INFO - 0 doublons supprimés.
+2025-03-17 09:24:06,892 - INFO - Valeurs manquantes traitée. Le nombre des valeurs était de : 
+InvoiceNo      0
+StockCode      0
+Description    0
+Quantity       0
+InvoiceDate    0
+UnitPrice      0
+CustomerID     0
+Country        0
+dtype: int64
+2025-03-17 09:24:06,895 - INFO - Calcule du montant total de chaque transaction..
+2025-03-17 09:24:06,903 - INFO - Calcule du total terminée et une nouvelle colonne 'TotalAmount' est ajoutée. Voici un appercu : 
+   InvoiceNo StockCode                          Description  Quantity         InvoiceDate  UnitPrice  CustomerID         Country  TotalAmount
+0    536365    85123A   WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0  United Kingdom        15.30
+1    536365     71053                  WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2    536365    84406B       CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0  United Kingdom        22.00
+3    536365    84029G  KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+4    536365    84029E       RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0  United Kingdom        20.34
+2025-03-17 09:24:06,904 - INFO - Aggregation des données mondiales..
+2025-03-17 09:24:06,959 - INFO - Le classement des ventes par Continent est: 
+         Continent  TotalAmount
+2         Europe  8075580.534
+4        Oceania   137009.770
+1           Asia    55725.140
+3  North America     5397.300
+6        Unknown     2660.770
+5  South America     1143.600
+0         Africa     1002.310
+2025-03-17 09:24:06,961 - INFO - Identification du contient avec plus d'opérations annulées...
+2025-03-17 09:24:07,079 - INFO - Le continent avec le plus grand nombre de transactions annulées est: Europe
+2025-03-17 09:24:07,085 - INFO - Pipeline ETL terminé avec succès :)
+2025-03-17 09:24:07,085 - INFO - Enregistrement du fichier parquet dans data/transactions_final.parquet...
+2025-03-17 09:24:07,967 - INFO - Fichier parquet enregistré avec succès.
