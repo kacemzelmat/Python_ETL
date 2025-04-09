@@ -99,10 +99,5 @@ pytest tests/
 
 ---
 
-## ✨ Auteur
-
-Développé avec ❤️ par **Belkacem Zelmat**  
-📧 Contact : belkacem.zelmat@example.com  
-🌐 GitHub : [https://github.com/votre-utilisateur/OnlineRetailETL](https://github.com/votre-utilisateur/OnlineRetailETL)
 
 
