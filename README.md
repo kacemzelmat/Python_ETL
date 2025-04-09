@@ -64,19 +64,22 @@ OnlineRetailETL/
 ```bash
 git clone https://github.com/votre-utilisateur/OnlineRetailETL.git
 cd OnlineRetailETL
+```
 
 2. Installez les dépendances :
 ```bash
 pip install -r requirements.txt
+```
 
 3. Exécutez le pipeline :
 ```bash
 python etl_pipeline.py
+```
 
 4. Lancez les tests :
 ```bash
 pytest tests/
-
+```
 
 ## 📊 Résultats générés
 
