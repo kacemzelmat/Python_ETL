@@ -71,9 +71,11 @@ python etl_pipeline.py
 ````
 3. Lancez les tests :
 
-````bash
+```bash
 pytest tests/
+
 ```
+
 ## 📊 Résultats générés
 
 - DataFrame nettoyé avec calcul du **montant total des transactions**
